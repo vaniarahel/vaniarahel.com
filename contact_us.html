@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact us</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-orange-50">
+    <!--header-->
+    <header class="sticky top-0 z-50 flex items-center justify-between px-10 py-6 bg-white shadow-md w-full">
+        <!--logo di kiri-->
+        <div>
+            <a href="index.html"><img class="w-24 h-10" src="photos/hsbc-logo-200x25.svg" alt="HSBC Logo"></a>
+        </div>
+
+        <!--menu di tengah-->
+        <div>
+            <ul class="flex items-center space-x-8 text-base text-xl">
+                <a href="biodata.html"><li class="hover:text-black-800 font-light">Biodata</li></a>
+                <a href="contact_us.html"><li class="hover:text-black-800 cursor-pointer font-light">Contact us</li></a>
+                <a href="posts.html"><li class="hover:text-black-800 cursor-pointer font-light">Posts</li></a>
+                <a href="freepage.html"><li class="hover:text-black-800 cursor-pointer font-light">Freepage</li></a>
+            </ul>
+        </div>
+
+        <!--menu di kanan-->
+        <div class="flex items-center">
+            <a href="https://unai.edu/" target="_blank" class="text-black-800 mx-4">UNAI</a>
+            <p class="font-light">|</p>
+            <a href="https://fti.unai.edu/" target="_blank" class="text-black-800 mx-4">FTI UNAI</a>
+            <p class="mx-4 font-light">|</p>
+            <img class="w-4 h-4" src="photos/loupe.png">
+        </div>
+    </header>
+    
+    <!-- Success Message -->
+    <div id="successMessage" class="hidden bg-green-100 border border-green-400 text-green-700 px-6 py-4 rounded-lg mx-5 mt-5 transition-all">
+        <p class="font-semibold text-lg">✓ Success!</p>
+        <p class="text-sm">Your biodata has been submitted successfully.</p>
+    </div>
+    
+    <form id="biodataForm" class="p-8 font-semibold bg-sky-200 mx-5 my-5 text-slate-800 rounded-lg shadow-md">
+        
+        <!-- Full Name -->
+        <div class="mb-4">
+            <label for="fname" class="block mb-2">Full Name:</label>
+            <input type="text" name="fname" id="fname" 
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all outline-none">
+            <p id="fnameError" class="text-red-600 text-sm mt-1 hidden"></p>
+        </div>
+
+        <!-- Student ID -->
+        <div class="mb-4">
+            <label for="nim" class="block mb-2">Student ID:</label>
+            <input type="text" name="nim" id="nim" 
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all outline-none">
+            <p id="nimError" class="text-red-600 text-sm mt-1 hidden"></p>
+        </div>
+
+        <!-- Email -->
+        <div class="mb-4">
+            <label for="mail" class="block mb-2">Email:</label>
+            <input type="email" name="mail" id="mail" 
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all outline-none">
+            <p id="mailError" class="text-red-600 text-sm mt-1 hidden"></p>
+        </div>
+
+        <!-- Major -->
+        <div class="mb-4">
+            <label for="major" class="block mb-2">Major:</label>
+            <select id="major" name="major" 
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all outline-none">
+                <option value="">-- Select Major --</option>
+                <option value="informationEngineering">Informatic Engineering</option>
+                <option value="informationSystem">Information System</option>
+                <option value="accounting">Accounting</option>
+                <option value="nurse">Nursing</option>
+                <option value="education">Education</option>        
+            </select>
+            <p id="majorError" class="text-red-600 text-sm mt-1 hidden"></p>
+        </div>
+
+        <!-- Date of Birth -->
+        <div class="mb-4">
+            <label for="date" class="block mb-2">Date of Birth:</label>
+            <input type="date" name="date" id="date" 
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all outline-none">
+            <p id="dateError" class="text-red-600 text-sm mt-1 hidden"></p>
+        </div>
+
+        <!-- Gender -->
+        <div class="mb-4">
+            <label class="block mb-2">Gender:</label>
+            <div class="flex items-center space-x-6">
+                <div class="flex items-center">
+                    <input type="radio" id="male" name="gender" value="male" 
+                        class="w-4 h-4 text-blue-600 focus:ring-2 focus:ring-blue-500">
+                    <label for="male" class="ml-2 font-normal">Male</label>
+                </div>
+                <div class="flex items-center">
+                    <input type="radio" id="female" name="gender" value="female" 
+                        class="w-4 h-4 text-blue-600 focus:ring-2 focus:ring-blue-500">
+                    <label for="female" class="ml-2 font-normal">Female</label>
+                </div>
+            </div>
+            <p id="genderError" class="text-red-600 text-sm mt-1 hidden"></p>
+        </div>
+
+        <!-- Address -->
+        <div class="mb-4">
+            <label for="address" class="block mb-2">Address:</label>
+            <textarea id="address" name="address" rows="5" 
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all outline-none resize-none"></textarea>
+            <p id="addressError" class="text-red-600 text-sm mt-1 hidden"></p>
+        </div>
+
+        <!-- Phone Number -->
+        <div class="mb-6">
+            <label for="pnum" class="block mb-2">Phone Number:</label>
+            <input type="text" name="pnum" id="pnum" 
+                class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all outline-none"
+                placeholder="Enter 10+ digits">
+            <p id="pnumError" class="text-red-600 text-sm mt-1 hidden"></p>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" 
+            class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg">
+            Submit Biodata
+        </button>
+    </form>
+
+    <script>
+        const form = document.getElementById('biodataForm');
+        const successMessage = document.getElementById('successMessage');
+        
+        // Field references
+        const fnameField = document.getElementById('fname');
+        const nimField = document.getElementById('nim');
+        const mailField = document.getElementById('mail');
+        const majorField = document.getElementById('major');
+        const dateField = document.getElementById('date');
+        const maleField = document.getElementById('male');
+        const femaleField = document.getElementById('female');
+        const addressField = document.getElementById('address');
+        const pnumField = document.getElementById('pnum');
+        
+        // Error message references
+        const fnameError = document.getElementById('fnameError');
+        const nimError = document.getElementById('nimError');
+        const mailError = document.getElementById('mailError');
+        const majorError = document.getElementById('majorError');
+        const dateError = document.getElementById('dateError');
+        const genderError = document.getElementById('genderError');
+        const addressError = document.getElementById('addressError');
+        const pnumError = document.getElementById('pnumError');
+        
+        // Validation functions
+        function validateFname() {
+            const value = fnameField.value.trim();
+            if (value === '') {
+                showError(fnameError, fnameField, 'Please enter your full name');
+                return false;
+            }
+            hideError(fnameError, fnameField);
+            return true;
+        }
+        
+        function validateNim() {
+            const value = nimField.value.trim();
+            if (value === '') {
+                showError(nimError, nimField, 'Please enter your student ID');
+                return false;
+            }
+            hideError(nimError, nimField);
+            return true;
+        }
+        
+        function validateMail() {
+            const value = mailField.value.trim();
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            
+            if (value === '') {
+                showError(mailError, mailField, 'Please enter your email address');
+                return false;
+            }
+            if (!emailRegex.test(value)) {
+                showError(mailError, mailField, 'Please enter a valid email address');
+                return false;
+            }
+            hideError(mailError, mailField);
+            return true;
+        }
+        
+        function validateMajor() {
+            const value = majorField.value;
+            if (value === '') {
+                showError(majorError, majorField, 'Please select your major');
+                return false;
+            }
+            hideError(majorError, majorField);
+            return true;
+        }
+        
+        function validateDate() {
+            const value = dateField.value;
+            if (value === '') {
+                showError(dateError, dateField, 'Please enter your date of birth');
+                return false;
+            }
+            hideError(dateError, dateField);
+            return true;
+        }
+        
+        function validateGender() {
+            if (!maleField.checked && !femaleField.checked) {
+                showError(genderError, null, 'Please select your gender');
+                return false;
+            }
+            hideError(genderError, null);
+            return true;
+        }
+        
+        function validateAddress() {
+            const value = addressField.value.trim();
+            if (value === '') {
+                showError(addressError, addressField, 'Please enter your address');
+                return false;
+            }
+            hideError(addressError, addressField);
+            return true;
+        }
+        
+        function validatePnum() {
+            const value = pnumField.value.trim();
+            const numericValue = value.replace(/\D/g, '');
+            
+            if (value === '') {
+                showError(pnumError, pnumField, 'Please enter your phone number');
+                return false;
+            }
+            if (!/^\d+$/.test(value)) {
+                showError(pnumError, pnumField, 'Phone number must contain only numeric values');
+                return false;
+            }
+            if (numericValue.length < 10) {
+                showError(pnumError, pnumField, 'Phone number must be at least 10 digits');
+                return false;
+            }
+            hideError(pnumError, pnumField);
+            return true;
+        }
+        
+        // Helper functions for error display
+        function showError(errorElement, inputElement, message) {
+            errorElement.textContent = message;
+            errorElement.classList.remove('hidden');
+            if (inputElement) {
+                inputElement.classList.add('border-red-500');
+            }
+        }
+        
+        function hideError(errorElement, inputElement) {
+            errorElement.classList.add('hidden');
+            if (inputElement) {
+                inputElement.classList.remove('border-red-500');
+            }
+        }
+        
+        // Real-time validation on blur
+        fnameField.addEventListener('blur', validateFname);
+        nimField.addEventListener('blur', validateNim);
+        mailField.addEventListener('blur', validateMail);
+        majorField.addEventListener('blur', validateMajor);
+        dateField.addEventListener('blur', validateDate);
+        maleField.addEventListener('change', validateGender);
+        femaleField.addEventListener('change', validateGender);
+        addressField.addEventListener('blur', validateAddress);
+        pnumField.addEventListener('blur', validatePnum);
+        
+        // Prevent non-numeric input in phone field
+        pnumField.addEventListener('keypress', function(e) {
+            if (!/\d/.test(e.key) && e.key !== 'Backspace' && e.key !== 'Tab') {
+                e.preventDefault();
+            }
+        });
+        
+        // Form submission
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Hide success message if visible
+            successMessage.classList.add('hidden');
+            
+            // Validate all fields
+            const isFnameValid = validateFname();
+            const isNimValid = validateNim();
+            const isMailValid = validateMail();
+            const isMajorValid = validateMajor();
+            const isDateValid = validateDate();
+            const isGenderValid = validateGender();
+            const isAddressValid = validateAddress();
+            const isPnumValid = validatePnum();
+            
+            // If all validations pass
+            if (isFnameValid && isNimValid && isMailValid && isMajorValid && 
+                isDateValid && isGenderValid && isAddressValid && isPnumValid) {
+                
+                // Show success message
+                successMessage.classList.remove('hidden');
+                
+                // Clear all fields
+                form.reset();
+                
+                // Hide all error messages
+                hideError(fnameError, fnameField);
+                hideError(nimError, nimField);
+                hideError(mailError, mailField);
+                hideError(majorError, majorField);
+                hideError(dateError, dateField);
+                hideError(genderError, null);
+                hideError(addressError, addressField);
+                hideError(pnumError, pnumField);
+                
+                // Scroll to success message
+                successMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                
+                // Hide success message after 5 seconds
+                setTimeout(() => {
+                    successMessage.classList.add('hidden');
+                }, 5000);
+            } else {
+                // Scroll to first error
+                const firstError = document.querySelector('.text-red-600:not(.hidden)');
+                if (firstError) {
+                    firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            }
+        });
+    </script>
+</body>
+</html>
