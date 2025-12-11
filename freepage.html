@@ -2,70 +2,84 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="mobile-web-app-capable" content="yes">
     <title>Freepage</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        * {
+            -webkit-tap-highlight-color: transparent;
+        }
+        input, textarea, select, button {
+            font-size: 16px !important; 
+        }
+        @media (max-width: 640px) {
+            body {
+                font-size: 14px;
+            }
+        }
+    </style>
 </head>
-<body class="bg-[#e4b1aa]">
+<body class="bg-[#e4b1aa] min-h-screen w-full overflow-x-hidden">
    <!--header-->
-    <header class="sticky top-0 z-50 flex items-center justify-between px-10 py-6 bg-white shadow-md w-full">
+    <header class="sticky top-0 z-50 flex flex-col md:flex-row items-center justify-between px-4 md:px-10 py-4 md:py-6 bg-white shadow-md w-full transition-all duration-300 ease-in-out">
         <!--logo di kiri-->
-        <div>
-            <a href="index.html"><img class="w-24 h-10" src="photos/hsbc-logo-200x25.svg" alt="HSBC Logo"></a>
+        <div class="mb-4 md:mb-0">
+            <a href="index.html" class="transition-transform duration-300 ease-in-out hover:scale-105 focus:scale-105 active:scale-95"><img class="w-20 md:w-24 h-8 md:h-10" src="photos/hsbc-logo-200x25.svg" alt="HSBC Logo"></a>
         </div>
 
         <!--menu di tengah-->
-        <div>
-            <ul class="flex items-center space-x-8 text-base text-xl">
-                <a href="biodata.html"><li class="hover:text-black-800 font-light">Biodata</li></a>
-                <a href="contact_us.html"><li class="hover:text-black-800 cursor-pointer font-light">Contact us</li></a>
-                <a href="posts.html"><li class="hover:text-black-800 cursor-pointer font-light">Posts</li></a>
-                <a href="freepage.html"><li class="hover:text-black-800 cursor-pointer font-light">Freepage</li></a>
+        <div class="mb-4 md:mb-0">
+            <ul class="flex flex-wrap items-center justify-center gap-4 md:gap-8 text-sm md:text-base md:text-xl">
+                <a href="biodata.html"><li class="transition-all duration-300 ease-in-out hover:text-red-600 hover:scale-110 focus:text-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 rounded px-2 active:scale-95 font-light">Biodata</li></a>
+                <a href="contact_us.html"><li class="transition-all duration-300 ease-in-out hover:text-red-600 hover:scale-110 focus:text-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 rounded px-2 active:scale-95 cursor-pointer font-light">Contact us</li></a>
+                <a href="posts.html"><li class="transition-all duration-300 ease-in-out hover:text-red-600 hover:scale-110 focus:text-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 rounded px-2 active:scale-95 cursor-pointer font-light">Posts</li></a>
+                <a href="freepage.html"><li class="transition-all duration-300 ease-in-out hover:text-red-600 hover:scale-110 focus:text-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 rounded px-2 active:scale-95 cursor-pointer font-light">Freepage</li></a>
             </ul>
         </div>
 
         <!--menu di kanan-->
-        <div class="flex items-center">
-            <a href="https://unai.edu/" target="_blank" class="text-black-800 mx-4">UNAI</a>
-            <p class="font-light">|</p>
-            <a href="https://fti.unai.edu/" target="_blank" class="text-black-800 mx-4">FTI UNAI</a>
-            <p class="mx-4 font-light">|</p>
-            <img class="w-4 h-4" src="photos/loupe.png">
+        <div class="flex items-center gap-2 md:gap-4">
+            <a href="https://unai.edu/" target="_blank" class="text-xs md:text-base text-black-800 mx-2 md:mx-4 transition-all duration-300 ease-in-out hover:text-red-600 hover:underline focus:text-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 rounded active:scale-95">UNAI</a>
+            <p class="font-light hidden md:block">|</p>
+            <a href="https://fti.unai.edu/" target="_blank" class="text-xs md:text-base text-black-800 mx-2 md:mx-4 transition-all duration-300 ease-in-out hover:text-red-600 hover:underline focus:text-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 rounded active:scale-95">FTI UNAI</a>
+            <p class="mx-2 md:mx-4 font-light hidden md:block">|</p>
+            <img class="w-4 h-4 transition-transform duration-300 ease-in-out hover:scale-125 cursor-pointer" src="photos/loupe.png" alt="Search">
         </div>
     </header>
     
     <main class="mb-10">
     <div>
-        <div class="flex justify-center items-center">
-            <img class="w-100" src="photos/animation.png">
+        <div class="flex justify-center items-center transition-transform duration-500 ease-in-out hover:scale-105">
+            <img class="w-full max-w-md md:max-w-lg" src="photos/animation.png" alt="Animation">
         </div>
         <div>
-            <p class="text-center text-9xl font-bold text-rose-900 py-4">Hello!</p>
-            <p class="text-center text-xl font-bold text-rose-900 mb-8">In this page I will tell you more about my hobbies</p>
-            <div class="w-full h-px bg-rose-300"></div>
+            <p class="text-center text-4xl md:text-7xl lg:text-9xl font-bold text-rose-900 py-3 md:py-4 transition-all duration-300 ease-in-out hover:scale-110 hover:text-rose-700 leading-tight">Hello!</p>
+            <p class="text-center text-sm md:text-xl font-bold text-rose-900 mb-4 md:mb-8 px-3 md:px-4 transition-all duration-300 ease-in-out hover:text-rose-700 leading-relaxed">In this page I will tell you more about my hobbies</p>
+            <div class="w-full h-px bg-rose-300 transition-all duration-300 ease-in-out hover:bg-rose-400"></div>
         </div>
     </div>
 
     <!-- Reading Books Card -->
-    <div class="max-w-6xl mx-auto bg-white rounded-lg shadow-lg border-4 border-rose-200 overflow-hidden mb-8">
-        <div class="flex flex-col md:flex-row-reverse items-center gap-6 p-8">
-            <div class="flex-shrink-0">
-                <img class="w-80 h-80 object-cover rounded-lg border-4 border-rose-300 shadow-md" 
+    <div class="max-w-6xl mx-auto bg-white rounded-lg shadow-lg border-4 border-rose-200 overflow-hidden mb-4 md:mb-8 transition-all duration-300 ease-in-out hover:shadow-2xl hover:scale-[1.02] mx-3 md:mx-auto">
+        <div class="flex flex-col md:flex-row-reverse items-center gap-4 md:gap-6 p-4 md:p-8">
+            <div class="flex-shrink-0 transition-transform duration-500 ease-in-out hover:scale-110 w-full md:w-auto">
+                <img class="w-full max-w-[280px] md:w-80 h-auto md:h-80 object-cover rounded-lg border-4 border-rose-300 shadow-md transition-all duration-300 ease-in-out hover:border-rose-400 mx-auto" 
                      src="photos/reading.jpg" 
                      alt="Reading">   
             </div>
-            <div class="flex-1">
-                <h2 class="text-3xl text-rose-900 font-bold mb-4 border-b-4 border-rose-300 pb-2">
+            <div class="flex-1 w-full">
+                <h2 class="text-xl md:text-3xl text-rose-900 font-bold mb-3 md:mb-4 border-b-4 border-rose-300 pb-2 transition-all duration-300 ease-in-out hover:text-rose-700 hover:border-rose-400 leading-tight">
                     Reading Books
                 </h2>
-                <div class="space-y-4 text-gray-700 leading-relaxed">
-                    <p>
+                <div class="space-y-3 md:space-y-4 text-xs md:text-base text-gray-700 leading-relaxed">
+                    <p class="transition-all duration-300 ease-in-out hover:text-gray-800">
                         It started, as it so often does, with a novel. It was a fiction novel that offered a perfect escape from the awkwardness of being thirteen, or perhaps a gripping young adult story where the characters felt just as confused and passionate as I did.
                     </p>
-                    <p>
+                    <p class="transition-all duration-300 ease-in-out hover:text-gray-800">
                         I didn't just read the book; I fell into it. The bell would ring for dinner, and I'd finish the chapter under the table. I'd lose track of time, the pages blurring as the outside world dissolved into forests, castles, or busy high school hallways.
                     </p>
-                    <p>
+                    <p class="transition-all duration-300 ease-in-out hover:text-gray-800">
                         And from there grew the feeling of wanting to read more and more, whether it's fiction or non-fiction book.
                     </p>
                 </div>
@@ -76,25 +90,25 @@
     <div class="max-w-6xl mx-auto space-y-8">
         
         <!-- Collecting Flower Card -->
-        <div class="bg-white rounded-lg shadow-lg border-4 border-amber-200 overflow-hidden">
-            <div class="flex flex-col md:flex-row items-center gap-6 p-8">
-                <div class="flex-shrink-0">
-                    <img class="w-80 h-80 object-cover rounded-lg border-4 border-amber-300 shadow-md" 
+        <div class="bg-white rounded-lg shadow-lg border-4 border-amber-200 overflow-hidden mb-4 md:mb-8 transition-all duration-300 ease-in-out hover:shadow-2xl hover:scale-[1.02] mx-3 md:mx-auto">
+            <div class="flex flex-col md:flex-row items-center gap-4 md:gap-6 p-4 md:p-8">
+                <div class="flex-shrink-0 transition-transform duration-500 ease-in-out hover:scale-110 w-full md:w-auto">
+                    <img class="w-full max-w-[280px] md:w-80 h-auto md:h-80 object-cover rounded-lg border-4 border-amber-300 shadow-md transition-all duration-300 ease-in-out hover:border-amber-400 mx-auto" 
                          src="photos/collecting-flower.jpg" 
                          alt="Collecting flowers">   
                 </div>
-                <div class="flex-1">
-                    <h2 class="text-3xl text-amber-900 font-bold mb-4 border-b-4 border-amber-300 pb-2">
+                <div class="flex-1 w-full">
+                    <h2 class="text-xl md:text-3xl text-amber-900 font-bold mb-3 md:mb-4 border-b-4 border-amber-300 pb-2 transition-all duration-300 ease-in-out hover:text-amber-700 hover:border-amber-400 leading-tight">
                         Collecting Flower
                     </h2>
-                    <div class="space-y-4 text-gray-700 leading-relaxed">
-                        <p>
+                    <div class="space-y-3 md:space-y-4 text-xs md:text-base text-gray-700 leading-relaxed">
+                        <p class="transition-all duration-300 ease-in-out hover:text-gray-800">
                             There's something magical about collecting flowers. Each bloom tells a story, captured in a moment of perfect beauty before it fades away.
                         </p>
-                        <p>
+                        <p class="transition-all duration-300 ease-in-out hover:text-gray-800">
                             Whether pressed between the pages of a book or displayed in a vase, every flower becomes a treasured memory of a special day, a beautiful place, or a fleeting season.
                         </p>
-                        <p>
+                        <p class="transition-all duration-300 ease-in-out hover:text-gray-800">
                             This hobby has taught me to slow down and appreciate the small wonders that nature offers us every day.
                         </p>
                     </div>
@@ -103,25 +117,25 @@
         </div>
         
         <!-- Try Something New Card -->
-        <div class="bg-white rounded-lg shadow-lg border-4 border-teal-200 overflow-hidden">
-            <div class="flex flex-col md:flex-row-reverse items-center gap-6 p-8">
-                <div class="flex-shrink-0">
-                    <img class="w-80 h-80 object-cover rounded-lg border-4 border-teal-300 shadow-md" 
+        <div class="bg-white rounded-lg shadow-lg border-4 border-teal-200 overflow-hidden mb-4 md:mb-8 transition-all duration-300 ease-in-out hover:shadow-2xl hover:scale-[1.02] mx-3 md:mx-auto">
+            <div class="flex flex-col md:flex-row-reverse items-center gap-4 md:gap-6 p-4 md:p-8">
+                <div class="flex-shrink-0 transition-transform duration-500 ease-in-out hover:scale-110 w-full md:w-auto">
+                    <img class="w-full max-w-[280px] md:w-80 h-auto md:h-80 object-cover rounded-lg border-4 border-teal-300 shadow-md transition-all duration-300 ease-in-out hover:border-teal-400 mx-auto" 
                          src="photos/something-new.jpg" 
                          alt="Try something new">   
                 </div>
-                <div class="flex-1">
-                    <h2 class="text-3xl text-teal-900 font-bold mb-4 border-b-4 border-teal-300 pb-2">
+                <div class="flex-1 w-full">
+                    <h2 class="text-xl md:text-3xl text-teal-900 font-bold mb-3 md:mb-4 border-b-4 border-teal-300 pb-2 transition-all duration-300 ease-in-out hover:text-teal-700 hover:border-teal-400 leading-tight">
                         Try Something New
                     </h2>
-                    <div class="space-y-4 text-gray-700 leading-relaxed">
-                        <p>
+                    <div class="space-y-3 md:space-y-4 text-xs md:text-base text-gray-700 leading-relaxed">
+                        <p class="transition-all duration-300 ease-in-out hover:text-gray-800">
                             Life is too short to stay in your comfort zone. Every new experience is an opportunity to discover something unexpected about yourself and the world around you.
                         </p>
-                        <p>
+                        <p class="transition-all duration-300 ease-in-out hover:text-gray-800">
                             From trying exotic cuisines to learning a new skill, each adventure adds color and richness to life's tapestry.
                         </p>
-                        <p>
+                        <p class="transition-all duration-300 ease-in-out hover:text-gray-800">
                             The thrill of stepping into the unknown has become one of my greatest joys, reminding me that growth happens at the edge of comfort.
                         </p>
                     </div>
@@ -130,25 +144,25 @@
         </div>
         
         <!-- Sight Seeing Card -->
-        <div class="bg-white rounded-lg shadow-lg border-4 border-blue-200 overflow-hidden">
-            <div class="flex flex-col md:flex-row items-center gap-6 p-8">
-                <div class="flex-shrink-0">
-                    <img class="w-80 h-80 object-cover rounded-lg border-4 border-blue-300 shadow-md" 
+        <div class="bg-white rounded-lg shadow-lg border-4 border-blue-200 overflow-hidden transition-all duration-300 ease-in-out hover:shadow-2xl hover:scale-[1.02] mx-3 md:mx-auto">
+            <div class="flex flex-col md:flex-row items-center gap-4 md:gap-6 p-4 md:p-8">
+                <div class="flex-shrink-0 transition-transform duration-500 ease-in-out hover:scale-110 w-full md:w-auto">
+                    <img class="w-full max-w-[280px] md:w-80 h-auto md:h-80 object-cover rounded-lg border-4 border-blue-300 shadow-md transition-all duration-300 ease-in-out hover:border-blue-400 mx-auto" 
                          src="photos/sight-seeing.jpg" 
                          alt="Sight seeing">   
                 </div>
-                <div class="flex-1">
-                    <h2 class="text-3xl text-blue-900 font-bold mb-4 border-b-4 border-blue-300 pb-2">
+                <div class="flex-1 w-full">
+                    <h2 class="text-xl md:text-3xl text-blue-900 font-bold mb-3 md:mb-4 border-b-4 border-blue-300 pb-2 transition-all duration-300 ease-in-out hover:text-blue-700 hover:border-blue-400 leading-tight">
                         Sight Seeing
                     </h2>
-                    <div class="space-y-4 text-gray-700 leading-relaxed">
-                        <p>
+                    <div class="space-y-3 md:space-y-4 text-xs md:text-base text-gray-700 leading-relaxed">
+                        <p class="transition-all duration-300 ease-in-out hover:text-gray-800">
                             Exploring new places opens your eyes to different perspectives and ways of living. Every destination has its own rhythm, its own story waiting to be discovered.
                         </p>
-                        <p>
+                        <p class="transition-all duration-300 ease-in-out hover:text-gray-800">
                             Whether it's wandering through historic streets, marveling at natural wonders, or simply watching the sunset from a new vantage point, each journey enriches the soul.
                         </p>
-                        <p>
+                        <p class="transition-all duration-300 ease-in-out hover:text-gray-800">
                             Sight seeing isn't just about ticking places off a list—it's about collecting moments and memories that will last a lifetime.
                         </p>
                     </div>

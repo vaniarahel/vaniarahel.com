@@ -2,62 +2,76 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="mobile-web-app-capable" content="yes">
     <title>Posts</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        * {
+            -webkit-tap-highlight-color: transparent;
+        }
+        input, textarea, select, button {
+            font-size: 16px !important; 
+        }
+        @media (max-width: 640px) {
+            body {
+                font-size: 14px;
+            }
+        }
+    </style>
 </head>
-<body class="bg-lime-200">
+<body class="bg-lime-200 min-h-screen w-full overflow-x-hidden">
     <!--header-->
-    <header class="sticky top-0 z-50 flex items-center justify-between px-10 py-6 bg-white shadow-md w-full">
+    <header class="sticky top-0 z-50 flex flex-col md:flex-row items-center justify-between px-4 md:px-10 py-4 md:py-6 bg-white shadow-md w-full transition-all duration-300 ease-in-out">
         <!--logo di kiri-->
-        <div>
-            <a href="index.html"><img class="w-24 h-10" src="photos/hsbc-logo-200x25.svg" alt="HSBC Logo"></a>
+        <div class="mb-4 md:mb-0">
+            <a href="index.html" class="transition-transform duration-300 ease-in-out hover:scale-105 focus:scale-105 active:scale-95"><img class="w-20 md:w-24 h-8 md:h-10" src="photos/hsbc-logo-200x25.svg" alt="HSBC Logo"></a>
         </div>
 
         <!--menu di tengah-->
-        <div>
-            <ul class="flex items-center space-x-8 text-base text-xl">
-                <a href="biodata.html"><li class="hover:text-black-800 font-light">Biodata</li></a>
-                <a href="contact_us.html"><li class="hover:text-black-800 cursor-pointer font-light">Contact us</li></a>
-                <a href="posts.html"><li class="hover:text-black-800 cursor-pointer font-light">Posts</li></a>
-                <a href="freepage.html"><li class="hover:text-black-800 cursor-pointer font-light">Freepage</li></a>
+        <div class="mb-4 md:mb-0">
+            <ul class="flex flex-wrap items-center justify-center gap-4 md:gap-8 text-sm md:text-base md:text-xl">
+                <a href="biodata.html"><li class="transition-all duration-300 ease-in-out hover:text-red-600 hover:scale-110 focus:text-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 rounded px-2 active:scale-95 font-light">Biodata</li></a>
+                <a href="contact_us.html"><li class="transition-all duration-300 ease-in-out hover:text-red-600 hover:scale-110 focus:text-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 rounded px-2 active:scale-95 cursor-pointer font-light">Contact us</li></a>
+                <a href="posts.html"><li class="transition-all duration-300 ease-in-out hover:text-red-600 hover:scale-110 focus:text-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 rounded px-2 active:scale-95 cursor-pointer font-light">Posts</li></a>
+                <a href="freepage.html"><li class="transition-all duration-300 ease-in-out hover:text-red-600 hover:scale-110 focus:text-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 rounded px-2 active:scale-95 cursor-pointer font-light">Freepage</li></a>
             </ul>
         </div>
 
         <!--menu di kanan-->
-        <div class="flex items-center">
-            <a href="https://unai.edu/" target="_blank" class="text-black-800 mx-4">UNAI</a>
-            <p class="font-light">|</p>
-            <a href="https://fti.unai.edu/" target="_blank" class="text-black-800 mx-4">FTI UNAI</a>
-            <p class="mx-4 font-light">|</p>
-            <img class="w-4 h-4" src="photos/loupe.png">
+        <div class="flex items-center gap-2 md:gap-4">
+            <a href="https://unai.edu/" target="_blank" class="text-xs md:text-base text-black-800 mx-2 md:mx-4 transition-all duration-300 ease-in-out hover:text-red-600 hover:underline focus:text-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 rounded active:scale-95">UNAI</a>
+            <p class="font-light hidden md:block">|</p>
+            <a href="https://fti.unai.edu/" target="_blank" class="text-xs md:text-base text-black-800 mx-2 md:mx-4 transition-all duration-300 ease-in-out hover:text-red-600 hover:underline focus:text-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 rounded active:scale-95">FTI UNAI</a>
+            <p class="mx-2 md:mx-4 font-light hidden md:block">|</p>
+            <img class="w-4 h-4 transition-transform duration-300 ease-in-out hover:scale-125 cursor-pointer" src="photos/loupe.png" alt="Search">
         </div>
     </header>
 
     <!-- Main Content -->
-    <div class="container mx-auto px-5 py-10">
+    <div class="container mx-auto px-4 md:px-5 py-6 md:py-10">
         <!-- Page Title -->
-        <div class="text-center mb-10">
-            <h1 class="text-4xl font-bold text-slate-800 mb-3">Posts Data</h1>
-            <p class="text-lg text-slate-600">Fetched from JSONPlaceholder API</p>
+        <div class="text-center mb-8 md:mb-10">
+            <h1 class="text-2xl md:text-4xl font-bold text-slate-800 mb-3 transition-all duration-300 ease-in-out hover:scale-110">Posts Data</h1>
+            <p class="text-base md:text-lg text-slate-600">Fetched from JSONPlaceholder API</p>
         </div>
 
         <!-- NIM Input Section -->
-        <div class="max-w-2xl mx-auto mb-10">
-            <div class="bg-white rounded-xl shadow-lg p-8">
-                <h2 class="text-2xl font-semibold text-slate-800 mb-4">Enter Your NIM</h2>
-                <p class="text-slate-600 mb-6">Enter the last two digits of your NIM to fetch the corresponding post data (1-100)</p>
+        <div class="max-w-2xl mx-auto mb-8 md:mb-10">
+            <div class="bg-white rounded-xl shadow-lg p-6 md:p-8 transition-all duration-300 ease-in-out hover:shadow-xl">
+                <h2 class="text-xl md:text-2xl font-semibold text-slate-800 mb-4">Enter Your NIM</h2>
+                <p class="text-sm md:text-base text-slate-600 mb-6">Enter the last two digits of your NIM to fetch the corresponding post data (1-100)</p>
                 
-                <div class="flex gap-4">
+                <div class="flex flex-col md:flex-row gap-4">
                     <input 
                         type="text" 
                         id="nimInput" 
                         placeholder="Enter 1-2 digits (e.g., 5, 16, 23)"
                         maxlength="3"
-                        class="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all outline-none text-lg">
+                        class="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300 ease-in-out outline-none text-base md:text-lg hover:border-blue-400 active:border-blue-600">
                     <button 
                         id="fetchBtn"
-                        class="bg-lime-900 hover:bg-lime-100 hover:text-slate-800 text-white font-semibold px-8 py-3 rounded-lg transition-colors duration-200 shadow-md hover:shadow-lg">
+                        class="bg-lime-900 hover:bg-lime-100 hover:text-slate-800 active:bg-lime-800 text-white font-semibold px-6 md:px-8 py-4 md:py-3 rounded-lg transition-all duration-300 ease-in-out shadow-md hover:shadow-lg hover:scale-105 focus:outline-none focus:ring-2 focus:ring-lime-500 focus:ring-offset-2 active:scale-95 min-h-[44px] touch-manipulation text-sm md:text-base">
                         Fetch Data
                     </button>
                 </div>
@@ -81,26 +95,26 @@
 
         <!-- Card Layout -->
         <div id="cardLayout" class="hidden max-w-4xl mx-auto">
-            <div class="bg-white rounded-xl shadow-2xl overflow-hidden transform hover:scale-105 transition-transform duration-300">
+            <div class="bg-white rounded-xl shadow-2xl overflow-hidden transform hover:scale-105 transition-all duration-300 ease-in-out hover:shadow-3xl">
                 <!-- Card Header -->
-                <div class="bg-gradient-to-r from-blue-600 to-indigo-600 px-8 py-6">
-                    <div class="flex items-center justify-between">
-                        <h2 class="text-2xl font-bold text-white">Post Details</h2>
-                        <span id="cardPostId" class="bg-white text-blue-600 px-4 py-2 rounded-full font-bold text-sm"></span>
+                <div class="bg-gradient-to-r from-blue-600 to-indigo-600 px-6 md:px-8 py-4 md:py-6 transition-all duration-300 ease-in-out hover:from-blue-700 hover:to-indigo-700">
+                    <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-2">
+                        <h2 class="text-xl md:text-2xl font-bold text-white">Post Details</h2>
+                        <span id="cardPostId" class="bg-white text-blue-600 px-3 md:px-4 py-1 md:py-2 rounded-full font-bold text-xs md:text-sm transition-all duration-300 ease-in-out hover:scale-110"></span>
                     </div>
                 </div>
                 
                 <!-- Card Body -->
-                <div class="p-8">
-                    <h3 id="cardTitle" class="text-2xl font-bold text-slate-800 mb-4 leading-tight"></h3>
-                    <div class="border-l-4 border-blue-600 pl-4 py-2">
-                        <p id="cardBody" class="text-slate-600 leading-relaxed text-lg"></p>
+                <div class="p-6 md:p-8">
+                    <h3 id="cardTitle" class="text-xl md:text-2xl font-bold text-slate-800 mb-4 leading-tight transition-colors duration-300 ease-in-out hover:text-blue-600"></h3>
+                    <div class="border-l-4 border-blue-600 pl-4 py-2 transition-all duration-300 ease-in-out hover:border-blue-700">
+                        <p id="cardBody" class="text-slate-600 leading-relaxed text-base md:text-lg"></p>
                     </div>
                 </div>
                 
                 <!-- Card Footer -->
-                <div class="bg-gray-50 px-8 py-4 border-t border-gray-200">
-                    <p class="text-sm text-slate-500">
+                <div class="bg-gray-50 px-6 md:px-8 py-3 md:py-4 border-t border-gray-200 transition-all duration-300 ease-in-out hover:bg-gray-100">
+                    <p class="text-xs md:text-sm text-slate-500">
                         <span class="font-semibold">User ID:</span> <span id="cardUserId"></span>
                     </p>
                 </div>
@@ -145,14 +159,14 @@
         </div>
 
         <!-- Layout Toggle Buttons -->
-        <div id="layoutToggle" class="hidden max-w-4xl mx-auto mt-8 text-center">
-            <div class="bg-white rounded-lg shadow-md p-4 inline-block">
-                <p class="text-sm text-slate-600 mb-3">Switch Display Layout:</p>
-                <div class="flex gap-4">
-                    <button id="showCard" class="bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+        <div id="layoutToggle" class="hidden max-w-4xl mx-auto mt-6 md:mt-8 text-center">
+            <div class="bg-white rounded-lg shadow-md p-4 inline-block transition-all duration-300 ease-in-out hover:shadow-lg">
+                <p class="text-xs md:text-sm text-slate-600 mb-3">Switch Display Layout:</p>
+                <div class="flex flex-col md:flex-row gap-3 md:gap-4">
+                    <button id="showCard" class="bg-blue-600 text-white px-4 md:px-6 py-3 md:py-2 rounded-lg font-semibold hover:bg-blue-700 active:bg-blue-800 transition-all duration-300 ease-in-out hover:scale-105 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 active:scale-95 min-h-[44px] touch-manipulation text-sm md:text-base">
                         📄 Card View
                     </button>
-                    <button id="showTable" class="bg-indigo-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-indigo-700 transition-colors">
+                    <button id="showTable" class="bg-indigo-600 text-white px-4 md:px-6 py-3 md:py-2 rounded-lg font-semibold hover:bg-indigo-700 active:bg-indigo-800 transition-all duration-300 ease-in-out hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 active:scale-95 min-h-[44px] touch-manipulation text-sm md:text-base">
                         📊 Table View
                     </button>
                 </div>

@@ -2,71 +2,85 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="mobile-web-app-capable" content="yes">
     <title>HSBC Group corporate website | HSBC Holdings plc</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        * {
+            -webkit-tap-highlight-color: transparent;
+        }
+        input, textarea, select, button {
+            font-size: 16px !important; 
+        }
+        @media (max-width: 640px) {
+            body {
+                font-size: 14px;
+            }
+        }
+    </style>
 </head>
-<body style="display: flex; flex-direction: column; align-items: center; justify-content: center;" class="bg-[#f5f6f7]">
+<body class="bg-[#f5f6f7] min-h-screen w-full overflow-x-hidden">
     <!--header-->
-    <header class="sticky top-0 z-50 flex items-center justify-between px-10 py-6 bg-white shadow-md w-full">
+    <header class="sticky top-0 z-50 flex flex-col md:flex-row items-center justify-between px-4 md:px-10 py-4 md:py-6 bg-white shadow-md w-full transition-all duration-300 ease-in-out">
         <!--logo di kiri-->
-        <div>
-            <a href="index.html"><img class="w-24 h-10" src="photos/hsbc-logo-200x25.svg" alt="HSBC Logo"></a>
+        <div class="mb-4 md:mb-0">
+            <a href="index.html" class="transition-transform duration-300 ease-in-out hover:scale-105 focus:scale-105 active:scale-95"><img class="w-20 md:w-24 h-8 md:h-10" src="photos/hsbc-logo-200x25.svg" alt="HSBC Logo"></a>
         </div>
 
         <!--menu di tengah-->
-        <div>
-            <ul class="flex items-center space-x-8 text-base text-xl">
-                <a href="biodata.html"><li class="hover:text-black-800 font-light">Biodata</li></a>
-                <a href="contact_us.html"><li class="hover:text-black-800 cursor-pointer font-light">Contact us</li></a>
-                <a href="posts.html"><li class="hover:text-black-800 cursor-pointer font-light">Posts</li></a>
-                <a href="freepage.html"><li class="hover:text-black-800 cursor-pointer font-light">Freepage</li></a>
+        <div class="mb-4 md:mb-0 w-full md:w-auto">
+            <ul class="flex flex-wrap items-center justify-center gap-3 md:gap-8 text-sm md:text-base md:text-xl">
+                <a href="biodata.html" class="min-h-[44px] min-w-[44px] flex items-center justify-center"><li class="transition-all duration-300 ease-in-out hover:text-red-600 hover:scale-110 focus:text-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 rounded px-3 py-2 active:scale-95 font-light touch-manipulation">Biodata</li></a>
+                <a href="contact_us.html" class="min-h-[44px] min-w-[44px] flex items-center justify-center"><li class="transition-all duration-300 ease-in-out hover:text-red-600 hover:scale-110 focus:text-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 rounded px-3 py-2 active:scale-95 cursor-pointer font-light touch-manipulation">Contact us</li></a>
+                <a href="posts.html" class="min-h-[44px] min-w-[44px] flex items-center justify-center"><li class="transition-all duration-300 ease-in-out hover:text-red-600 hover:scale-110 focus:text-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 rounded px-3 py-2 active:scale-95 cursor-pointer font-light touch-manipulation">Posts</li></a>
+                <a href="freepage.html" class="min-h-[44px] min-w-[44px] flex items-center justify-center"><li class="transition-all duration-300 ease-in-out hover:text-red-600 hover:scale-110 focus:text-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 rounded px-3 py-2 active:scale-95 cursor-pointer font-light touch-manipulation">Freepage</li></a>
             </ul>
         </div>
 
         <!--menu di kanan-->
-        <div class="flex items-center">
-            <a href="https://unai.edu/" target="_blank" class="text-black-800 mx-4">UNAI</a>
-            <p class="font-light">|</p>
-            <a href="https://fti.unai.edu/" target="_blank" class="text-black-800 mx-4">FTI UNAI</a>
-            <p class="mx-4 font-light">|</p>
-            <img class="w-4 h-4" src="photos/loupe.png">
+        <div class="flex items-center gap-2 md:gap-4">
+            <a href="https://unai.edu/" target="_blank" class="text-xs md:text-base text-black-800 mx-1 md:mx-4 px-2 py-2 min-h-[44px] min-w-[44px] flex items-center justify-center transition-all duration-300 ease-in-out hover:text-red-600 hover:underline focus:text-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 rounded active:scale-95 touch-manipulation">UNAI</a>
+            <p class="font-light hidden md:block">|</p>
+            <a href="https://fti.unai.edu/" target="_blank" class="text-xs md:text-base text-black-800 mx-1 md:mx-4 px-2 py-2 min-h-[44px] min-w-[44px] flex items-center justify-center transition-all duration-300 ease-in-out hover:text-red-600 hover:underline focus:text-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 rounded active:scale-95 touch-manipulation">FTI UNAI</a>
+            <p class="mx-1 md:mx-4 font-light hidden md:block">|</p>
+            <button class="w-11 h-11 md:w-4 md:h-4 flex items-center justify-center transition-transform duration-300 ease-in-out hover:scale-125 cursor-pointer touch-manipulation" aria-label="Search"><img class="w-5 h-5 md:w-4 md:h-4" src="photos/loupe.png" alt="Search"></button>
         </div>
     </header>
 
     <!--hero section-->
       <div class="w-full relative">
-        <div class="w-full absolute bg-black/45 h-[640px]"></div>
-        <img src="photos/we-re-partnering-with-ai-powerhouse-mistral-1600x900.jpg" alt="" class="w-full h-[640px] object-center object-cover">
-        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center">
-            <h1 class="text-6xl font-light mb-10">We're partnering with AI powerhouse Mistral</h1>
-            <button class="border border-1 border-white px-5 py-3 text-xl rounded">Find out more</button>
+        <div class="w-full absolute bg-black/45 h-[300px] md:h-[500px] lg:h-[640px] transition-all duration-500 ease-in-out"></div>
+        <img src="photos/we-re-partnering-with-ai-powerhouse-mistral-1600x900.jpg" alt="" class="w-full h-[300px] md:h-[500px] lg:h-[640px] object-center object-cover transition-transform duration-700 ease-in-out hover:scale-105">
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-center px-4">
+            <h1 class="text-2xl md:text-4xl lg:text-6xl font-light mb-6 md:mb-10 transition-all duration-500 ease-in-out">We're partnering with AI powerhouse Mistral</h1>
+            <button class="border border-1 border-white px-6 md:px-5 py-3 md:py-3 text-base md:text-xl rounded transition-all duration-300 ease-in-out hover:bg-white hover:text-black hover:scale-110 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 active:scale-95 min-h-[44px] touch-manipulation">Find out more</button>
         </div>
     </div>
 
     <!-- Container -->
-    <div class="flex items-stretch gap-6 max-w-6xl -translate-y-14 px-5">
+    <div class="flex flex-col lg:flex-row items-stretch gap-4 md:gap-6 max-w-6xl -translate-y-6 md:-translate-y-14 px-3 md:px-5 mx-auto w-full">
         <!-- Kanan -->
         <!-- <div class="basis-1/2 flex flex-col gap-10 justify-end"> -->
-        <div class="basis-1/2 mt-20">
+        <div class="w-full lg:basis-1/2 mt-10 md:mt-20">
             <!-- Atas -->
-            <div class="bg-white mb-6">
-                <img src="photos/our-net-zero-strategy-banner-576x768.jpg" alt="" class="w-full">
-                <div class="p-16">
-                    <h2 class="text-4xl font-light mb-8">Our Net Zero Transition Plan</h2>
-                    <p class="text-lg mb-8 pr-6">We're putting customers' evolving needs and expanding growth opportunities at the heart of our updated plan.</p>
+            <div class="bg-white mb-6 transition-all duration-300 ease-in-out hover:shadow-xl rounded-lg overflow-hidden">
+                <img src="photos/our-net-zero-strategy-banner-576x768.jpg" alt="" class="w-full transition-transform duration-500 ease-in-out hover:scale-105">
+                <div class="p-6 md:p-16">
+                    <h2 class="text-xl md:text-4xl font-light mb-4 md:mb-8 transition-colors duration-300 ease-in-out hover:text-red-600 leading-tight">Our Net Zero Transition Plan</h2>
+                    <p class="text-sm md:text-lg mb-4 md:mb-8 pr-0 md:pr-6 leading-relaxed">We're putting customers' evolving needs and expanding growth opportunities at the heart of our updated plan.</p>
                     <ul>
-                        <li class="transition ease-in-out duration-500 hover:translate-x-5 mb-2">
-                            <a href="" class="text-lg flex items-center gap-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right text-red-600" viewBox="0 0 16 16">
+                        <li class="transition-all ease-in-out duration-500 hover:translate-x-5 mb-2">
+                            <a href="" class="text-sm md:text-lg flex items-center gap-2 py-2 min-h-[44px] transition-all duration-300 ease-in-out hover:text-red-600 focus:text-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 rounded active:scale-95 touch-manipulation">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right text-red-600 transition-transform duration-300 ease-in-out group-hover:translate-x-1" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
                                 </svg>
                                 View quick read
                             </a>
                         </li>
-                        <li class="transition ease-in-out duration-500 hover:translate-x-5">
-                            <a href="" class="text-lg flex items-center gap-2">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right text-red-600" viewBox="0 0 16 16">
+                        <li class="transition-all ease-in-out duration-500 hover:translate-x-5">
+                            <a href="" class="text-sm md:text-lg flex items-center gap-2 py-2 min-h-[44px] transition-all duration-300 ease-in-out hover:text-red-600 focus:text-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 rounded active:scale-95 touch-manipulation">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right text-red-600 transition-transform duration-300 ease-in-out group-hover:translate-x-1" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
                                 </svg>
                                 Sustainability Pulse Survey
@@ -76,11 +90,11 @@
                 </div>
             </div>
             <!-- Bawah -->
-            <div class="bg-white p-16">
-                <h2 class="text-4xl font-light mb-8 pr-5">Younger generations investing with greater confidence</h2>
-                <p class="text-lg mb-8 pr-6">Younger generations of savvy, digital natives are investing in their financial futures with more confidence and control than older generations, says Jenny Wang.</p>
-                <a href="" class="text-lg flex items-center gap-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right text-red-600" viewBox="0 0 16 16">
+            <div class="bg-white p-6 md:p-16 transition-all duration-300 ease-in-out hover:shadow-xl rounded-lg">
+                <h2 class="text-xl md:text-4xl font-light mb-4 md:mb-8 pr-0 md:pr-5 transition-colors duration-300 ease-in-out hover:text-red-600 leading-tight">Younger generations investing with greater confidence</h2>
+                <p class="text-sm md:text-lg mb-4 md:mb-8 pr-0 md:pr-6 leading-relaxed">Younger generations of savvy, digital natives are investing in their financial futures with more confidence and control than older generations, says Jenny Wang.</p>
+                <a href="" class="text-sm md:text-lg flex items-center gap-2 py-2 min-h-[44px] transition-all duration-300 ease-in-out hover:text-red-600 hover:translate-x-2 focus:text-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 rounded active:scale-95 touch-manipulation">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right text-red-600 transition-transform duration-300 ease-in-out group-hover:translate-x-1" viewBox="0 0 16 16">
                         <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
                     </svg>
                     Read more
@@ -90,15 +104,15 @@
 
         <!-- Kiri -->
         <!-- <div class="basis-1/2 flex flex-col gap-10 mb-20"> -->
-        <div class="basis-1/2">
+        <div class="w-full lg:basis-1/2">
             <!-- Atas -->
-            <div class="bg-white mb-6">
-                <img src="photos/brendan-nelson-appointed-as-group-chair-2-768x576.jpg" alt="">
-                <div class="p-16">
-                    <h2 class="text-4xl font-light mb-8">Brendan Nelson appointed as Group Chair</h2>
-                    <p class="text-lg mb-8">The HSBC Board has appointed Brendan Nelson as Group Chair.</p>
-                    <a href="" class="text-lg flex items-center gap-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right text-red-600" viewBox="0 0 16 16">
+            <div class="bg-white mb-6 transition-all duration-300 ease-in-out hover:shadow-xl rounded-lg overflow-hidden">
+                <img src="photos/brendan-nelson-appointed-as-group-chair-2-768x576.jpg" alt="" class="w-full transition-transform duration-500 ease-in-out hover:scale-105">
+                <div class="p-6 md:p-16">
+                    <h2 class="text-xl md:text-4xl font-light mb-4 md:mb-8 transition-colors duration-300 ease-in-out hover:text-red-600 leading-tight">Brendan Nelson appointed as Group Chair</h2>
+                    <p class="text-sm md:text-lg mb-4 md:mb-8 leading-relaxed">The HSBC Board has appointed Brendan Nelson as Group Chair.</p>
+                    <a href="" class="text-sm md:text-lg flex items-center gap-2 py-2 min-h-[44px] transition-all duration-300 ease-in-out hover:text-red-600 hover:translate-x-2 focus:text-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 rounded active:scale-95 touch-manipulation">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right text-red-600 transition-transform duration-300 ease-in-out group-hover:translate-x-1" viewBox="0 0 16 16">
                             <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
                         </svg>
                         Read more
@@ -106,13 +120,13 @@
                 </div>
             </div>
             <!-- Bawah -->
-            <div class="bg-white">
-                <img src="photos/global-businesses-adapting-to-trade-uncertainty-768x576.jpg" alt="">
-                <div class="p-16">
-                    <h2 class="text-4xl font-light mb-8">Global businesses adapting to trade uncertainty</h2>
-                    <p class="text-lg mb-8">International businesses are settling into a steady state of constant adaptation as they navigate evolving trade and tariff headwinds, according to our latest Global Trade Pulse Survey.</p>
-                    <a href="" class="text-lg flex items-center gap-2">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right text-red-600" viewBox="0 0 16 16">
+            <div class="bg-white transition-all duration-300 ease-in-out hover:shadow-xl rounded-lg overflow-hidden">
+                <img src="photos/global-businesses-adapting-to-trade-uncertainty-768x576.jpg" alt="" class="w-full transition-transform duration-500 ease-in-out hover:scale-105">
+                <div class="p-6 md:p-16">
+                    <h2 class="text-xl md:text-4xl font-light mb-4 md:mb-8 transition-colors duration-300 ease-in-out hover:text-red-600 leading-tight">Global businesses adapting to trade uncertainty</h2>
+                    <p class="text-sm md:text-lg mb-4 md:mb-8 leading-relaxed">International businesses are settling into a steady state of constant adaptation as they navigate evolving trade and tariff headwinds, according to our latest Global Trade Pulse Survey.</p>
+                    <a href="" class="text-sm md:text-lg flex items-center gap-2 py-2 min-h-[44px] transition-all duration-300 ease-in-out hover:text-red-600 hover:translate-x-2 focus:text-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 rounded active:scale-95 touch-manipulation">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-right text-red-600 transition-transform duration-300 ease-in-out group-hover:translate-x-1" viewBox="0 0 16 16">
                             <path fill-rule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708"/>
                         </svg>
                         Read more
@@ -123,66 +137,66 @@
     </div>
 
     
-    <div class="flex gap-6 px-10 pb-20 bg-white space-x-2 mx-4 w-full">
-        <div class="basis-1/3 mt-20 bg-[#f5f6f7]">
-            <img src="photos/financial-support-768x576.jpg">
-            <div class="m-8">
-                <h2 class="text-3xl font-light mb-8">Carers need more tailored financial support</h2>
-                <p>We have a responsibility to step in and address the financial challenges faced by carers - and to help them find the tailored financial support that they need, says Steve Reay.</p>
-                <a href="">Read more</a>
+    <div class="flex flex-col md:flex-row gap-4 md:gap-6 px-3 md:px-10 pb-8 md:pb-20 bg-white mx-2 md:mx-4 w-full">
+        <div class="w-full md:basis-1/3 mt-6 md:mt-20 bg-[#f5f6f7] transition-all duration-300 ease-in-out hover:shadow-xl hover:scale-105 rounded-lg overflow-hidden">
+            <img src="photos/financial-support-768x576.jpg" class="w-full transition-transform duration-500 ease-in-out hover:scale-110" alt="Financial support">
+            <div class="m-4 md:m-8">
+                <h2 class="text-lg md:text-3xl font-light mb-4 md:mb-8 transition-colors duration-300 ease-in-out hover:text-red-600 leading-tight">Carers need more tailored financial support</h2>
+                <p class="mb-4 md:mb-6 text-sm md:text-base leading-relaxed">We have a responsibility to step in and address the financial challenges faced by carers - and to help them find the tailored financial support that they need, says Steve Reay.</p>
+                <a href="" class="text-sm md:text-lg py-2 min-h-[44px] inline-flex items-center transition-all duration-300 ease-in-out hover:text-red-600 hover:underline focus:text-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 rounded active:scale-95 touch-manipulation">Read more</a>
             </div>
         </div>
-        <div class="basis-1/3 mt-20 bg-[#f5f6f7]">
-            <img src="photos/quantum-enabled-algorithmic-768x576.jpg">
-            <div class="m-8">
-                <h2 class="text-3xl font-light mb-8">A world-first in quantum algo trading</h2>
-                <p>We teamed up with IBM to deliver a world-first trial that explored how quantum computing can boost algorithmic bond trading.</p>
-                <ul>
+        <div class="w-full md:basis-1/3 mt-6 md:mt-20 bg-[#f5f6f7] transition-all duration-300 ease-in-out hover:shadow-xl hover:scale-105 rounded-lg overflow-hidden">
+            <img src="photos/quantum-enabled-algorithmic-768x576.jpg" class="w-full transition-transform duration-500 ease-in-out hover:scale-110" alt="Quantum computing">
+            <div class="m-4 md:m-8">
+                <h2 class="text-lg md:text-3xl font-light mb-4 md:mb-8 transition-colors duration-300 ease-in-out hover:text-red-600 leading-tight">A world-first in quantum algo trading</h2>
+                <p class="mb-4 md:mb-6 text-sm md:text-base leading-relaxed">We teamed up with IBM to deliver a world-first trial that explored how quantum computing can boost algorithmic bond trading.</p>
+                <ul class="space-y-2">
                     <li>
-                        <a href="">Read the media release</a>
+                        <a href="" class="text-sm md:text-lg py-2 min-h-[44px] inline-flex items-center transition-all duration-300 ease-in-out hover:text-red-600 hover:underline focus:text-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 rounded active:scale-95 touch-manipulation">Read the media release</a>
                     </li>
                     <li>
-                        <a href="">Visit the HSBC and Quantum page</a>
+                        <a href="" class="text-sm md:text-lg py-2 min-h-[44px] inline-flex items-center transition-all duration-300 ease-in-out hover:text-red-600 hover:underline focus:text-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 rounded active:scale-95 touch-manipulation">Visit the HSBC and Quantum page</a>
                     </li>
                 </ul>
             </div>
         </div>
-        <div class="basis-1/3 mt-20 bg-[#f5f6f7]">
-            <img src="photos/hsbc-proposes-to-privatise-hang-seng-bank-768x576.jpg">
-            <div class="m-8">
-                <h2 class="text-3xl font-light mb-8">HSBC proposes to privatise Hang Seng Bank</h2>
-                <p>The proposal represents a significant investment into the Hong Kong economy and a commitment to retain Hang Seng’s brand, heritage, and distinct customer proposition.</p>
-                <ul>
+        <div class="w-full md:basis-1/3 mt-6 md:mt-20 bg-[#f5f6f7] transition-all duration-300 ease-in-out hover:shadow-xl hover:scale-105 rounded-lg overflow-hidden">
+            <img src="photos/hsbc-proposes-to-privatise-hang-seng-bank-768x576.jpg" class="w-full transition-transform duration-500 ease-in-out hover:scale-110" alt="Hang Seng Bank">
+            <div class="m-4 md:m-8">
+                <h2 class="text-lg md:text-3xl font-light mb-4 md:mb-8 transition-colors duration-300 ease-in-out hover:text-red-600 leading-tight">HSBC proposes to privatise Hang Seng Bank</h2>
+                <p class="mb-4 md:mb-6 text-sm md:text-base leading-relaxed">The proposal represents a significant investment into the Hong Kong economy and a commitment to retain Hang Seng's brand, heritage, and distinct customer proposition.</p>
+                <ul class="space-y-2">
                     <li>
-                        <a href="">Find out more</a>
+                        <a href="" class="text-sm md:text-lg py-2 min-h-[44px] inline-flex items-center transition-all duration-300 ease-in-out hover:text-red-600 hover:underline focus:text-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 rounded active:scale-95 touch-manipulation">Find out more</a>
                     </li>
                     <li>
-                        <a href="">Read the media release</a>
+                        <a href="" class="text-sm md:text-lg py-2 min-h-[44px] inline-flex items-center transition-all duration-300 ease-in-out hover:text-red-600 hover:underline focus:text-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 rounded active:scale-95 touch-manipulation">Read the media release</a>
                     </li>
                 </ul>
             </div>
         </div>
     </div>
 
-    <div class="relative mb-28">
+    <div class="relative mb-16 md:mb-28">
         <div>
-            <img src="photos/ssstudents-and-graduates-programmes-thumbnail-1600x900.jpg">
+            <img src="photos/ssstudents-and-graduates-programmes-thumbnail-1600x900.jpg" class="w-full transition-transform duration-700 ease-in-out hover:scale-105" alt="Students and graduates">
         </div>
-        <div class="bg-[#730014] max-w-xl p-12 text-center absolute right-0 -bottom-20 z-99 mx-12 mb-10">
-            <h2 class="text-5xl text-white font-light mb-10">Discover where a career</h2>
-            <h2 class="text-5xl text-white font-light mb-10">at HSBC could take you</h2>
-            <p class="text-white mb-10">Learn more about our opportunities for students and graduates. Get the support you need, step by step, to grow and grow.</p>
-            <button class="border border-1 border-white px-5 py-3 text-xl rounded text-white">Students and graduates</button>
+        <div class="bg-[#730014] max-w-full md:max-w-xl p-4 md:p-12 text-center relative md:absolute md:right-0 md:-bottom-10 md:-bottom-20 z-99 mx-2 md:mx-12 mb-4 md:mb-10 transition-all duration-300 ease-in-out hover:shadow-2xl">
+            <h2 class="text-xl md:text-4xl lg:text-5xl text-white font-light mb-3 md:mb-10 transition-all duration-300 ease-in-out leading-tight">Discover where a career</h2>
+            <h2 class="text-xl md:text-4xl lg:text-5xl text-white font-light mb-3 md:mb-10 transition-all duration-300 ease-in-out leading-tight">at HSBC could take you</h2>
+            <p class="text-white mb-4 md:mb-10 text-xs md:text-base leading-relaxed px-2">Learn more about our opportunities for students and graduates. Get the support you need, step by step, to grow and grow.</p>
+            <button class="border border-1 border-white px-5 md:px-5 py-3 md:py-3 text-sm md:text-xl rounded text-white transition-all duration-300 ease-in-out hover:bg-white hover:text-[#730014] hover:scale-110 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 active:scale-95 min-h-[44px] touch-manipulation">Students and graduates</button>
         </div>
     </div>
 
-    <div class="bg-[#1e1e1e] w-full  p-10">
-        <div class="mb-10">
-            <ul class="flex items-center justify-center space-x-8 text-base text-xl text-white mb-10">
-                <a href="biodata.html" target="_blank"><li class="hover:text-black-800 font-light">Biodata</li></a>
-                <a href="contact_us.html" target="_blank"><li class="hover:text-black-800 cursor-pointer font-light">Contact us</li></a>
-                <a href="posts.html" target="_blank"><li class="hover:text-black-800 cursor-pointer font-light">Posts</li></a>
-                <a href="freepage.html" target="_blank"><li class="hover:text-black-800 cursor-pointer font-light">Freepage</li></a>
+    <div class="bg-[#1e1e1e] w-full p-4 md:p-10">
+        <div class="mb-6 md:mb-10">
+            <ul class="flex flex-wrap items-center justify-center gap-3 md:gap-8 text-xs md:text-base md:text-xl text-white mb-6 md:mb-10">
+                <a href="biodata.html" target="_blank" class="min-h-[44px] min-w-[44px] flex items-center justify-center"><li class="transition-all duration-300 ease-in-out hover:text-red-400 hover:scale-110 focus:text-red-400 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-2 focus:ring-offset-[#1e1e1e] rounded px-3 py-2 active:scale-95 font-light touch-manipulation">Biodata</li></a>
+                <a href="contact_us.html" target="_blank" class="min-h-[44px] min-w-[44px] flex items-center justify-center"><li class="transition-all duration-300 ease-in-out hover:text-red-400 hover:scale-110 focus:text-red-400 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-2 focus:ring-offset-[#1e1e1e] rounded px-3 py-2 active:scale-95 cursor-pointer font-light touch-manipulation">Contact us</li></a>
+                <a href="posts.html" target="_blank" class="min-h-[44px] min-w-[44px] flex items-center justify-center"><li class="transition-all duration-300 ease-in-out hover:text-red-400 hover:scale-110 focus:text-red-400 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-2 focus:ring-offset-[#1e1e1e] rounded px-3 py-2 active:scale-95 cursor-pointer font-light touch-manipulation">Posts</li></a>
+                <a href="freepage.html" target="_blank" class="min-h-[44px] min-w-[44px] flex items-center justify-center"><li class="transition-all duration-300 ease-in-out hover:text-red-400 hover:scale-110 focus:text-red-400 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-2 focus:ring-offset-[#1e1e1e] rounded px-3 py-2 active:scale-95 cursor-pointer font-light touch-manipulation">Freepage</li></a>
             </ul>
             <div class="w-full h-px bg-stone-700"></div>
         </div>
@@ -217,33 +231,31 @@
         </div>
     </div>
 
-    <footer class="flex justify-center space-x-8 text-sm text-white bg-black w-full p-10">
+    <footer class="flex flex-wrap justify-center gap-3 md:gap-8 text-[10px] md:text-xs md:text-sm text-white bg-black w-full p-4 md:p-10">
         <div class="text-gray-400">
             <p>© HSBC Group 2025</p>
         </div>
         <div>
-            <p>Terms and conditions</p>
+            <p class="transition-all duration-300 ease-in-out hover:text-red-400 hover:underline cursor-pointer focus:text-red-400 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-2 focus:ring-offset-black rounded px-2 py-1 min-h-[44px] flex items-center active:scale-95 touch-manipulation">Terms and conditions</p>
         </div>
         <div>
-            <p>Privacy notice</p>
+            <p class="transition-all duration-300 ease-in-out hover:text-red-400 hover:underline cursor-pointer focus:text-red-400 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-2 focus:ring-offset-black rounded px-2 py-1 min-h-[44px] flex items-center active:scale-95 touch-manipulation">Privacy notice</p>
         </div>
         <div>
-            <p>Cookie notice</p>
+            <p class="transition-all duration-300 ease-in-out hover:text-red-400 hover:underline cursor-pointer focus:text-red-400 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-2 focus:ring-offset-black rounded px-2 py-1 min-h-[44px] flex items-center active:scale-95 touch-manipulation">Cookie notice</p>
         </div>
         <div>
-            <p>Website accessibility</p>
+            <p class="transition-all duration-300 ease-in-out hover:text-red-400 hover:underline cursor-pointer focus:text-red-400 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-2 focus:ring-offset-black rounded px-2 py-1 min-h-[44px] flex items-center active:scale-95 touch-manipulation">Website accessibility</p>
         </div>
         <div>
-            <p>Online security</p>
+            <p class="transition-all duration-300 ease-in-out hover:text-red-400 hover:underline cursor-pointer focus:text-red-400 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-2 focus:ring-offset-black rounded px-2 py-1 min-h-[44px] flex items-center active:scale-95 touch-manipulation">Online security</p>
         </div>
         <div>
-            <p>Sitemap</p>
+            <p class="transition-all duration-300 ease-in-out hover:text-red-400 hover:underline cursor-pointer focus:text-red-400 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-2 focus:ring-offset-black rounded px-2 py-1 min-h-[44px] flex items-center active:scale-95 touch-manipulation">Sitemap</p>
         </div>
         <div>
-            <p>Stopping modern slavery</p>
+            <p class="transition-all duration-300 ease-in-out hover:text-red-400 hover:underline cursor-pointer focus:text-red-400 focus:outline-none focus:ring-2 focus:ring-red-400 focus:ring-offset-2 focus:ring-offset-black rounded px-2 py-1 min-h-[44px] flex items-center active:scale-95 touch-manipulation">Stopping modern slavery</p>
         </div>
     </footer>
-</body>
-</html>
 </body>
 </html>

@@ -2,113 +2,127 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="mobile-web-app-capable" content="yes">
     <title>Biodata Page</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        * {
+            -webkit-tap-highlight-color: transparent;
+        }
+        input, textarea, select, button {
+            font-size: 16px !important; /* Prevents iOS zoom on focus */
+        }
+        @media (max-width: 640px) {
+            body {
+                font-size: 14px;
+            }
+        }
+    </style>
 </head>
-<body>
+<body class="min-h-screen w-full overflow-x-hidden">
      <!--header-->
-    <header class="sticky top-0 z-50 flex items-center justify-between px-10 py-6 bg-white shadow-md w-full">
+    <header class="sticky top-0 z-50 flex flex-col md:flex-row items-center justify-between px-4 md:px-10 py-4 md:py-6 bg-white shadow-md w-full transition-all duration-300 ease-in-out">
         <!--logo di kiri-->
-        <div>
-            <a href="index.html"><img class="w-24 h-10" src="photos/hsbc-logo-200x25.svg" alt="HSBC Logo"></a>
+        <div class="mb-4 md:mb-0">
+            <a href="index.html" class="transition-transform duration-300 ease-in-out hover:scale-105 focus:scale-105 active:scale-95"><img class="w-20 md:w-24 h-8 md:h-10" src="photos/hsbc-logo-200x25.svg" alt="HSBC Logo"></a>
         </div>
 
         <!--menu di tengah-->
-        <div>
-            <ul class="flex items-center space-x-8 text-base text-xl">
-                <a href="biodata.html"><li class="hover:text-black-800 font-light">Biodata</li></a>
-                <a href="contact_us.html"><li class="hover:text-black-800 cursor-pointer font-light">Contact us</li></a>
-                <a href="posts.html"><li class="hover:text-black-800 cursor-pointer font-light">Posts</li></a>
-                <a href="freepage.html"><li class="hover:text-black-800 cursor-pointer font-light">Freepage</li></a>
+        <div class="mb-4 md:mb-0">
+            <ul class="flex flex-wrap items-center justify-center gap-4 md:gap-8 text-sm md:text-base md:text-xl">
+                <a href="biodata.html"><li class="transition-all duration-300 ease-in-out hover:text-red-600 hover:scale-110 focus:text-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 rounded px-2 active:scale-95 font-light">Biodata</li></a>
+                <a href="contact_us.html"><li class="transition-all duration-300 ease-in-out hover:text-red-600 hover:scale-110 focus:text-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 rounded px-2 active:scale-95 cursor-pointer font-light">Contact us</li></a>
+                <a href="posts.html"><li class="transition-all duration-300 ease-in-out hover:text-red-600 hover:scale-110 focus:text-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 rounded px-2 active:scale-95 cursor-pointer font-light">Posts</li></a>
+                <a href="freepage.html"><li class="transition-all duration-300 ease-in-out hover:text-red-600 hover:scale-110 focus:text-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 rounded px-2 active:scale-95 cursor-pointer font-light">Freepage</li></a>
             </ul>
         </div>
 
         <!--menu di kanan-->
-        <div class="flex items-center">
-            <a href="https://unai.edu/" target="_blank" class="text-black-800 mx-4">UNAI</a>
-            <p class="font-light">|</p>
-            <a href="https://fti.unai.edu/" target="_blank" class="text-black-800 mx-4">FTI UNAI</a>
-            <p class="mx-4 font-light">|</p>
-            <img class="w-4 h-4" src="photos/loupe.png">
+        <div class="flex items-center gap-2 md:gap-4">
+            <a href="https://unai.edu/" target="_blank" class="text-xs md:text-base text-black-800 mx-2 md:mx-4 transition-all duration-300 ease-in-out hover:text-red-600 hover:underline focus:text-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 rounded active:scale-95">UNAI</a>
+            <p class="font-light hidden md:block">|</p>
+            <a href="https://fti.unai.edu/" target="_blank" class="text-xs md:text-base text-black-800 mx-2 md:mx-4 transition-all duration-300 ease-in-out hover:text-red-600 hover:underline focus:text-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 rounded active:scale-95">FTI UNAI</a>
+            <p class="mx-2 md:mx-4 font-light hidden md:block">|</p>
+            <img class="w-4 h-4 transition-transform duration-300 ease-in-out hover:scale-125 cursor-pointer" src="photos/loupe.png" alt="Search">
         </div>
     </header>
 
-    <div class="bg-[#ffd464] p-5 relative flex">
-         <div>
-            <img class="w-80 h-90" src="photos/photoOfMe.png">
+    <div class="bg-[#ffd464] p-4 md:p-5 relative flex flex-col md:flex-row items-center md:items-start gap-4 md:gap-6 transition-all duration-300 ease-in-out">
+         <div class="transition-transform duration-500 ease-in-out hover:scale-105 focus:scale-105 active:scale-95">
+            <img class="w-48 md:w-80 h-auto max-w-full" src="photos/photoOfMe.png" alt="Vania Rahel Putri Widiyanto">
         </div>
 
-        <div class="text-[#b01d3d] p-10">
-            <h2 class="text-5xl font-bold">Hi!</h2>
-            <h2 class="text-2xl font-semibold">I'm Vania Rahel Putri Widiyanto</h2>
-            <p class="text-md font-semibold">Student Id - 2481016</p>
-            <p>I'm currently on my third semester majoring in Informatics Engineering </p>
-            <p>faculty of Information Technology at Adventist University of Indonesia.</p>
-            <p>This website is the result of my learning journey in Web Programming!</p>
+        <div class="text-[#b01d3d] p-4 md:p-10 w-full">
+            <h2 class="text-2xl md:text-5xl font-bold transition-all duration-300 ease-in-out hover:scale-110 leading-tight">Hi!</h2>
+            <h2 class="text-lg md:text-2xl font-semibold mt-2 md:mt-0 transition-all duration-300 ease-in-out hover:text-[#8a1530] leading-tight">I'm Vania Rahel Putri Widiyanto</h2>
+            <p class="text-xs md:text-md font-semibold mt-2 transition-all duration-300 ease-in-out hover:scale-105">Student Id - 2481016</p>
+            <p class="mt-2 text-xs md:text-base transition-all duration-300 ease-in-out hover:text-[#8a1530] leading-relaxed">I'm currently on my third semester majoring in Informatics Engineering </p>
+            <p class="text-xs md:text-base transition-all duration-300 ease-in-out hover:text-[#8a1530] leading-relaxed">faculty of Information Technology at Adventist University of Indonesia.</p>
+            <p class="mt-2 text-xs md:text-base transition-all duration-300 ease-in-out hover:text-[#8a1530] leading-relaxed">This website is the result of my learning journey in Web Programming!</p>
         </div>
     </div>
 
     <div class="bg-[#ff5e5e] pb-5">
         <div class="text-center text-[#fcedd8]">
-            <h2 class="text-3xl pt-4 font-extrabold">My Hobbies</h2>
+            <h2 class="text-2xl md:text-3xl pt-4 font-extrabold transition-all duration-300 ease-in-out hover:scale-110">My Hobbies</h2>
         </div>
-        <div class="flex gap-6 mx-8 h-50">
-            <div class="basis-1/4 mt-10">
-                <div>
-                    <img class="border border-[#fcedd8] rounded-lg border-4" src="photos/reading.jpg">
+        <div class="flex flex-col sm:flex-row flex-wrap gap-4 md:gap-6 mx-3 md:mx-8">
+            <div class="w-full sm:w-[calc(50%-0.5rem)] md:basis-1/4 mt-4 md:mt-10 transition-all duration-300 ease-in-out hover:scale-105 focus:scale-105 active:scale-95">
+                <div class="transition-transform duration-500 ease-in-out hover:scale-110">
+                    <img class="border border-[#fcedd8] rounded-lg border-4 w-full" src="photos/reading.jpg" alt="Reading Books">
                 </div>
                 <div>
-                    <h2 class="text-xl text-[#fcedd9] text-center font-bold">Reading Books</h2>
+                    <h2 class="text-base md:text-xl text-[#fcedd9] text-center font-bold mt-2 transition-all duration-300 ease-in-out hover:text-white leading-tight">Reading Books</h2>
                 </div>
             </div>
            
-            <div class="basis-1/4 mt-10">
-                <div>
-                    <img class="border border-[#fcedd8] rounded-lg border-4" src="photos/collecting-flower.jpg">
+            <div class="w-full sm:w-[calc(50%-0.5rem)] md:basis-1/4 mt-4 md:mt-10 transition-all duration-300 ease-in-out hover:scale-105 focus:scale-105 active:scale-95">
+                <div class="transition-transform duration-500 ease-in-out hover:scale-110">
+                    <img class="border border-[#fcedd8] rounded-lg border-4 w-full" src="photos/collecting-flower.jpg" alt="Collecting Flower">
                 </div>
                 <div>
-                    <h2 class="text-xl text-[#fcedd9] text-center font-bold">Collecting flower</h2>
+                    <h2 class="text-base md:text-xl text-[#fcedd9] text-center font-bold mt-2 transition-all duration-300 ease-in-out hover:text-white leading-tight">Collecting flower</h2>
                 </div>
             </div>
                 
-            <div class="basis-1/4 mt-10">
-                <div>
-                <img class="border border-[#fcedd8] rounded-lg border-4" src="photos/something-new.jpg">
+            <div class="w-full sm:w-[calc(50%-0.5rem)] md:basis-1/4 mt-4 md:mt-10 transition-all duration-300 ease-in-out hover:scale-105 focus:scale-105 active:scale-95">
+                <div class="transition-transform duration-500 ease-in-out hover:scale-110">
+                <img class="border border-[#fcedd8] rounded-lg border-4 w-full" src="photos/something-new.jpg" alt="Try Something New">
             </div>
             <div>
-                <h2 class="text-xl text-[#fcedd9] text-center font-bold">Try something new</h2>
+                <h2 class="text-base md:text-xl text-[#fcedd9] text-center font-bold mt-2 transition-all duration-300 ease-in-out hover:text-white leading-tight">Try something new</h2>
             </div>
             </div>
             
-            <div class="basis-1/4 mt-10">
-                <div>
-                    <img class="border border-[#fcedd8] rounded-lg border-4" src="photos/sight-seeing.jpg">
+            <div class="w-full sm:w-[calc(50%-0.5rem)] md:basis-1/4 mt-4 md:mt-10 transition-all duration-300 ease-in-out hover:scale-105 focus:scale-105 active:scale-95">
+                <div class="transition-transform duration-500 ease-in-out hover:scale-110">
+                    <img class="border border-[#fcedd8] rounded-lg border-4 w-full" src="photos/sight-seeing.jpg" alt="Sight Seeing">
                 </div>
                 <div>
-                    <h2 class="text-xl text-[#fcedd9] text-center font-bold">Sight seeing</h2>
+                    <h2 class="text-base md:text-xl text-[#fcedd9] text-center font-bold mt-2 transition-all duration-300 ease-in-out hover:text-white leading-tight">Sight seeing</h2>
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="bg-[#e23c64] text-[#ffd4d6] text-center py-5">
+    <div class="bg-[#e23c64] text-[#ffd4d6] text-center py-5 transition-all duration-300 ease-in-out">
         <div>
-            <h2 class="text-3xl pt-4 font-extrabold">My Skills</h2>
+            <h2 class="text-2xl md:text-3xl pt-4 font-extrabold transition-all duration-300 ease-in-out hover:scale-110">My Skills</h2>
         </div>
         <div>
-            <p class="font-bold mt-10 text-xl">HTML • CSS • Java Script • Tailwind</p>
+            <p class="font-bold mt-6 md:mt-10 text-lg md:text-xl transition-all duration-300 ease-in-out hover:text-white hover:scale-105">HTML • CSS • Java Script • Tailwind</p>
         </div>
     </div>
 
-    <div class="bg-[#b0183d] text-[#fcedd8] text-center py-5 pl-2">
+    <div class="bg-[#b0183d] text-[#fcedd8] text-center py-5 pl-2 transition-all duration-300 ease-in-out">
         <div>
-            <h1 class="font-extrabold">Testimonial Section</h1>
+            <h1 class="text-xl md:text-2xl font-extrabold transition-all duration-300 ease-in-out hover:scale-110">Testimonial Section</h1>
         </div>
-        <div class="text-left mt-4 font-semibold">
-            <p>• What I enjoy: Once I grasp the logic, styling becomes a creative flow where I can focus on making the website feel beautiful and intentional.</p>
-            <p>• What challenges me: The "trouble" of debugging problems and figuring out how to build new features is where the real, often frustrating, learning happens.</p>
-            <p>• What changed my view: Web development feels manageable when I understand the underlying logic—it transforms from memorizing code to applying clear patterns to solve problems.</p>
+        <div class="text-left mt-4 font-semibold px-3 md:px-8 space-y-3">
+            <p class="text-xs md:text-base transition-all duration-300 ease-in-out hover:text-white hover:translate-x-2 leading-relaxed">• What I enjoy: Once I grasp the logic, styling becomes a creative flow where I can focus on making the website feel beautiful and intentional.</p>
+            <p class="text-xs md:text-base transition-all duration-300 ease-in-out hover:text-white hover:translate-x-2 leading-relaxed">• What challenges me: The "trouble" of debugging problems and figuring out how to build new features is where the real, often frustrating, learning happens.</p>
+            <p class="text-xs md:text-base transition-all duration-300 ease-in-out hover:text-white hover:translate-x-2 leading-relaxed">• What changed my view: Web development feels manageable when I understand the underlying logic—it transforms from memorizing code to applying clear patterns to solve problems.</p>
         </div>
     </div>
 </body>
